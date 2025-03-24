@@ -1,0 +1,388 @@
+/* Facebook */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(128, 128, 128, 0.04);
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 100%;
+}
+
+.header{
+    /* background-color: rgba(128, 128, 128, 0.04); */
+    border-bottom: 1px solid #f0f0f0;
+    color: #1877f2;
+    padding: 20px 40px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.header h2{
+    margin: 0;
+}
+
+.form1{
+    padding: 30px 20px;
+    text-align: center;
+   }
+
+.log{
+   font-size: 25px; 
+   margin-bottom: 20px;
+}
+
+.formControl{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.formControl input{
+    border: 2.4px solid #e7e1e1;
+    border-radius: 6px;
+    display: block;
+    font-size: 15px;
+    padding: 14px 16px;
+    width: 100%;
+
+    /* border-radius: 6px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 330px; */
+}
+
+.formControl button{
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 332px;
+    box-sizing: content-box;
+    
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    position: relative;
+   
+}
+
+.forgot{
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 100;
+    text-decoration: none;
+   padding: 30px;
+   cursor: pointer;
+   margin-top: 10px;
+}
+
+.or{
+    width: auto;
+    font-size: 10x;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    /* text-align: center; */
+}
+
+.new{
+    background-color: #42b72a;
+    border-color: #42b72a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    /* margin-top: 15px; */
+    text-decoration: none;
+    width: 182px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    
+    /* padding: 0 16px; */
+}
+
+@media (max-width:425px){
+    .container{
+        width: 100%;
+        max-height: 400px;
+    }
+
+    .form1{
+        padding: 15px;
+    }
+
+    .formControl input{
+        width: 100%;
+    }
+}
+
+@media (max-width:375px){
+    .container{
+        width: 300px;
+        max-height: 400px;
+    }
+    
+    .formControl input{
+        width: 100%;
+    }
+    .form1{
+        padding: 5px;
+    }
+
+    .formControl button{
+        padding: 2px 3px;
+        width: 285px;
+    }
+
+    .new{
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width:320px){
+    .container{
+        width: 290px;
+        margin: 0 auto;
+    }
+
+    .formControl input{
+        width: 100%;
+    }
+    
+    .formControl button{
+        width: 273px;
+    }
+
+    .new{
+        margin-bottom: 10px;
+    }
+}
+
+
+/* LinkedIn */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    /* padding-bottom: 20px; */
+    /* text-align: center; */
+}
+
+.img{
+    position: relative;
+}
+
+.imgage{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+   display: flex;
+   justify-content: center; 
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
+   width: 360px;
+   max-height: 100%;
+}
+
+/* img{
+    font-size: 50px;
+}     */
+
+.form{
+    padding: 30px 20px;
+}
+
+.signin{
+    font-size: 35px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;     
+}
+
+.formControl{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.formControl .gog{
+    background-color: #fff;
+    border: 1px solid #2c2b2b;
+    border-radius: 23px;
+    display: block;
+    font-size: 15px;
+    padding: 14px 16px;
+    width: 330px;
+}
+
+.or{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 24px;
+    background: transparent;
+    vertical-align: baseline;
+    
+}
+
+.formControl input{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #2c2b2b;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 295px;
+    box-sizing: content-box;
+    margin-top: 20px;
+    
+    /* -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    position: relative; */
+}
+
+
+.google{
+    color: #0073b1;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.apple{
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.anchor{
+    color: #0073b1;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0a66c2 !important;
+    border-radius: 28px !important;
+    z-index: 0;
+}
+
+.central{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.check{
+    padding: 15px;
+}
+
+.loggedIn{
+    font-size: 16px;
+    /* margin-bottom: 15px; */
+}
+
+.formControl1{
+    background-color: #0073b1;
+    color: #fff;
+    border: none;
+    border-radius: 23px;
+    font-size: 15px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 280px;
+    box-sizing: content-box;
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+}
+
+.join-now{
+    text-align: center;
+    margin: 32px 0 0;
+    margin-bottom: 10px;
+}
+
+.join{
+    color: #0073b1;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 375px){
+    .container{
+       width: 320px;
+       max-height: 100%; 
+    }
+
+    .form{
+        padding: 10px 10px;
+        width: 100%;
+        max-height: 100%;
+    }
+    .signin{
+        padding-left: 0;
+    }
+
+    .formControl .gog{
+        width: 300px;
+    }
+
+    .formControl input{
+        /* padding: 1px; */
+        width: 268px;
+    }
+
+    .formControl1{
+        width: 268px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 325px){
+    .signin{
+        padding-left: 0;
+    }
+    
+    .container{
+        width: 275px;
+    }
+
+    .formControl .gog{
+        width: 100%;
+    }
+
+    .formControl input{
+        width: 220px;
+    }
+
+    .formControl1{
+        width: 220px;
+    }
+
+    .join-now{
+        margin-bottom: 10px;
+    }
+}
