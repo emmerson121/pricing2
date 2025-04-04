@@ -12,6 +12,11 @@ body{
     overflow-x: hidden;
 }
 
+.home{
+    color: #000;
+    text-decoration: none;
+}
+
 .container{
     position: relative;
     width: 100%;

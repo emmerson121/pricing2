@@ -28,10 +28,10 @@ const Home = () => {
             <div  className='fixedWidth'>
             <div className="cover">  
             <div className='navbar1'>
-              <div className="icon">
+             <a className="home" href="/"> <div className="icon">
         <div className='main-image'><img className='image' src={cover3} alt=''/></div>
         <div className='name'>Ebiefie Emmerson</div>
-        </div>       
+        </div></a>       
         <div className="bar"><FontAwesomeIcon onClick={toggleModal} icon={faBars} /></div> 
         </div>
         </div>
