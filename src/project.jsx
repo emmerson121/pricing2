@@ -40,7 +40,7 @@ const Project = () => {
         </div>
               <Navbar />
 
-        <div className="pro">My Projects</div>
+        <div className="pro">Projects</div>
 
       <div className="central">      
         <div className="fix">
@@ -116,7 +116,7 @@ const Project = () => {
         {!toggle ? 
                 <div className="navbar2">
                   <div className="nav">
-                    {/* <div className="xmark"><FontAwesomeIcon onClick={closeModal} icon={faXmark} /></div> */}
+                    <div className="xmark1"><FontAwesomeIcon className="xmark" onClick={closeModal} icon={faXmark} /></div>
                     <ul className='back'>
                   <a className='back1' href='/'><li>HOME</li></a>
                   <a className='back1' href='./about'><li>ABOUT</li></a>

@@ -82,7 +82,10 @@ const Contact = () => {
           <textarea className="area">Enter message...</textarea>
           </div>
 
-          <button>Submit</button>
+          <div className="butt">
+          <div className="butt1">Submit</div>
+          </div>
+
           </div>
         </form>
       </div>
@@ -96,7 +99,7 @@ const Contact = () => {
         {!toggle ? 
         <div className="navbar2">
           <div className="nav">
-            <div className=""><FontAwesomeIcon className="xmark" onClick={closeModal} icon={faXmark} /></div>
+            <div className="xmark1"><FontAwesomeIcon className="xmark" onClick={closeModal} icon={faXmark} /></div>
             <ul className='back'>
           <a className='back1' href='/'><li>HOME</li></a>
           <a className='back1' href='./about'><li>ABOUT</li></a>

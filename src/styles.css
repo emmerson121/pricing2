@@ -202,6 +202,8 @@ body{
     font-size: 35px;
     font-weight: bold;
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .fill{
@@ -228,7 +230,7 @@ body{
     /* border: 1px solid #fff; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     width: 500px;
-    height: 350px;
+    height: 370px;
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -267,6 +269,24 @@ body{
     border-radius: 5px;
     padding-left: 20px;
 }
+
+.butt{
+    margin: 0 auto;
+    width: 110px;
+    margin-bottom: 20px;
+}
+
+.butt1{
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 10px 30px 0px rgba(14, 28, 60, 0.15);
+  }
 
 
 /* About section */
@@ -383,6 +403,10 @@ body{
     /* padding-left: 55px; */
     /* padding-bottom: 25px; */
     margin-left: 550px;
+    /* background-color: #fff;
+    height: 61px;
+    padding: 5px;
+    border-radius: 5px; */
 
 }
 
@@ -391,6 +415,7 @@ body{
     padding-bottom: 20px;
     font-size: 15px;
     font-weight: bold;
+    opacity: 3;
 }
 
 .mail{
@@ -406,7 +431,8 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 40px;
 }
 
 .constant{
@@ -525,7 +551,11 @@ body{
         height: 350px;
     }
   } */
-  
+  @media(min-width: 768px){
+    .pro{
+        margin-bottom: 30px;
+    }
+  }
 
   @media(max-width: 1024px){
     /* Home section */
@@ -557,9 +587,9 @@ body{
     }
 
     /* Project section */
-    .pro{
+    /* .pro{
         margin-bottom: 50px;
-    }
+    } */
     
     .row1, .row2, .row3{
         width: 700px;
@@ -631,7 +661,7 @@ body{
 
     .able {
         width: 100%;
-        max-width: 563px;
+        max-width: 500px;
         margin: 0 auto;
     }
 
@@ -790,9 +820,12 @@ body{
         height: 70px;
     }
 
-    .xmark{
+    .xmark1{
         display: flex;
         justify-content: end;
+    }
+
+    .xmark{
         color: #000;
         font-size: 30px;
         padding: 5px;
@@ -858,9 +891,11 @@ body{
     }
     
     .profile{
-        width: 202px;
-        text-align: left;
+        /* width: 202px; */
+        /* text-align: left; */
         margin: 0 auto;
+        align-items: center;
+        margin-top: 14px;
     }
     
 
@@ -868,17 +903,17 @@ body{
         gap: 10px;
     }
     .main-image{
-        width: 60px;
+        width: 38px;
     }
 
     .name{
         font-size: 15px;
     }
 
-    /* .able{
-        width: 215px;
-        margin-right: 62px;
-    } */
+    .able{
+        width: 310px;
+        /* margin-right: 62px; */
+    }
 
     .abilities{
         font-size: 15px;
@@ -924,6 +959,7 @@ body{
     .about{
         width: 90%;
         margin: 10px auto;
+        margin-top: 20px;
     }
 
     .about1{
@@ -1144,6 +1180,10 @@ body{
 
     .bar{
         width: 30px;
+    }
+
+    .able{
+        width: 270px;
     }
 
     .project{
