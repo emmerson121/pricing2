@@ -73,7 +73,6 @@ const Project = () => {
 
           <div className="page">A Responsive Website with Pricing for Services</div>
           <div className="page4">May, 2024</div>  
-          {/* <button className="page2">See more...</button>   */}
         </div>
 
         <div className="row4">
