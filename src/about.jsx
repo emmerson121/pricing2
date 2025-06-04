@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from "@fortawesome/fontawesome-free-solid";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const About = () => {
   const [toggle, setToggle] = useState(true);
@@ -64,6 +66,7 @@ const About = () => {
         programming.</div>
 </div>
 
+<AnimationOnScroll animateIn="animate__slideInLeft">
   <div className="skills">
       <div className="skill">My Skills</div>
             <p className="para">For an effective and responsive website, I'm proficient at utilizing:</p>
@@ -74,6 +77,7 @@ const About = () => {
               <li className="exp1"><FontAwesomeIcon icon={faArrowRight} /> React</li>
             </ul>
     </div>
+    </AnimationOnScroll>
     </div>
         </div>
 

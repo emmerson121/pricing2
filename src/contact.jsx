@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
+import validator from 'validator';
 import Navbar from "./navbar";
 import flower from './img/flower.png';
 import cover3 from './img/cover3.jpg';
@@ -12,6 +13,14 @@ import { faFacebook, faGithub, faLinkedin, faSquareInstagram, faXTwitter, faYout
 
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [number, setNumber] = useState('');
+  const [message, setMessage] = useState('');
+  const [emailStatement, setEmailStatement] = useState('');
+  const [phoneStatement, setPhoneStatement] = useState('');
+  const [messageStatement, setMessageStatement] = useState('');
+  const [error, setError] = useState('');
   const [toggle, setToggle] = useState(true);
   const toggleModal = () => {
     setToggle(!toggle);
@@ -23,7 +32,74 @@ const Contact = () => {
     document.body.style.overflow = "auto";
   };
 
+  const handleSubmit = (e) =>{
+    setName(e.target.value);
+    if(name === ''){
+      setError('Name cannot be empty');
+    }
+    else if(name.length <= 5){
+      setError('Must not be less than 6 characters');
+    }
+    else{
+      setError('');
+    }
+    
+  }
 
+  const submitButton = () =>{
+    if(name.length === 0 ){
+      setError('Name field cannot be empty');
+    }
+    else if(email.length === 0 ){
+      setEmailStatement('Email field cannot be empty');
+    }
+    else if(number.length === 0 ){
+      setPhoneStatement('This field cannot be empty')
+    }
+    else if(message.length === 0 ){
+      setMessageStatement('This field cannot be empty');
+    }
+    else if(name.length <= 5){
+      setError('Name must not be less than 6 characters');
+    }
+    else if(validator.isEmail(email) !== true){
+      setEmailStatement('Invalid email format');
+    }
+    else{ }
+  }
+
+  const handleSubmit1 = (e) =>{
+    setEmail(e.target.value);
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(validator.isEmail(email) == true){
+      setEmailStatement('')
+    }else{
+      setEmailStatement('Invalid email, please input a valid email');
+    }
+  }
+
+  const handleSubmit2 = (e) =>{
+    setNumber(e.target.value);
+    if(number.length == 0 ){
+      setPhoneStatement('Phone number must not be empty');
+    }
+    else if(number.length <= 9 ){
+      setPhoneStatement('Number must not be less than 10');
+    }
+    else{
+      setPhoneStatement('')
+    }
+  }
+
+  const handleSubmit3 = (e) =>{
+    setMessage(e.target.value);
+    if(message.length <= 5 ){
+      setMessageStatement('Must contain at least 6 characters');
+    }
+    else if(message.length >= 0 ){
+      setMessageStatement('');
+    }
+  }
 
   // const scroll = () =>
     // useEffect(() => {
@@ -66,24 +142,28 @@ const Contact = () => {
         <form className="wrap">
           <div className="formControl">
           <div className="newform">
-          <input type="text" placeholder="Enter name" />
+          <input type="text" placeholder="Enter name" onChange={handleSubmit}/>
+          <div className="err" id="name">{error}</div>
           </div>
           
 
           <div className="newform">
-          <input type="email" placeholder="Enter email" />
+          <input type="email" placeholder="Enter email" onChange={handleSubmit1}/>
+          <div className="err" id="email">{emailStatement}</div>
           </div>
 
           <div className="newform">
-          <input type="number" placeholder="Phone" />
+          <input type="number" placeholder="Phone" onChange={handleSubmit2}/>
+          <div className="err" id="number">{phoneStatement}</div>
           </div>
 
           <div className="">
-          <textarea className="area">Enter message...</textarea>
+          <textarea className="area" placeholder="Enter message..." onChange={handleSubmit3}></textarea>
+          <div className="err" id="message">{messageStatement}</div>
           </div>
 
           <div className="butt">
-          <div className="butt1">Submit</div>
+          <div className="butt1" id="send" onClick={submitButton}>Submit</div>
           </div>
 
           </div>
