@@ -13,6 +13,8 @@ import emmerson from './img/emmerson.png';
 import microgpt from './img/microgpt.png';
 import completeweb from './img/completeweb.png';
 import cryptoweb from './img/cryptoweb.png'; 
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Project = () => {
   const [toggle, setToggle] = useState(true);
@@ -43,7 +45,7 @@ const Project = () => {
         <div className="pro">Projects</div>
 
       <div className="central">      
-        <div className="fix">
+        <div className="fix"> 
         <div className="row1">
         <div className="imgDiv">
             <img className="sec" src={facebook} alt="" />
@@ -74,7 +76,7 @@ const Project = () => {
           <div className="page">A Responsive Website with Pricing for Services</div>
           <div className="page4">May, 2024</div>  
         </div>
-
+        
         <div className="row4">
         <div className="imgDiv1">
             <img className="sec" src={emmerson} alt="" />

@@ -139,21 +139,22 @@ const Contact = () => {
           <div>Get in touch here</div>
         </div>
 
+      <div className="wrap1">
         <form className="wrap">
           <div className="formControl">
-          <div className="newform">
-          <input type="text" placeholder="Enter name" onChange={handleSubmit}/>
+          <div className="">
+          <input className="newform" type="text" placeholder="Enter name" onChange={handleSubmit}/>
           <div className="err" id="name">{error}</div>
           </div>
           
 
-          <div className="newform">
-          <input type="email" placeholder="Enter email" onChange={handleSubmit1}/>
+          <div className="">
+          <input className="newform" type="email" placeholder="Enter email" onChange={handleSubmit1}/>
           <div className="err" id="email">{emailStatement}</div>
           </div>
 
-          <div className="newform">
-          <input type="number" placeholder="Phone" onChange={handleSubmit2}/>
+          <div className="">
+          <input className="newform" type="number" placeholder="Phone" onChange={handleSubmit2}/>
           <div className="err" id="number">{phoneStatement}</div>
           </div>
 
@@ -168,6 +169,7 @@ const Contact = () => {
 
           </div>
         </form>
+        </div>
       </div>
 
       <div className="mycontact">

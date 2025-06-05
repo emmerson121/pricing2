@@ -52,11 +52,14 @@ const About = () => {
         </div> */}
       
       <div className="fixed">
+        <AnimationOnScroll animateIn="animate__slideInLeft">
       <div className="about">
       <div className="about1">About Emmerson</div>
         <div className="web">I'm a Front-End Web Developer who's passionate about creativity and contributing to the success of innovative projects.</div>
       </div>
+      </AnimationOnScroll>
 
+<AnimationOnScroll animateIn="animate__slideInLeft">
 <div className="data">
       <div className="data1">Having being in the tech space for some years, I've 
         come across several projects, connected with leading 
@@ -65,6 +68,7 @@ const About = () => {
         experiences, and help me explore various branches in 
         programming.</div>
 </div>
+</AnimationOnScroll>
 
 <AnimationOnScroll animateIn="animate__slideInLeft">
   <div className="skills">
