@@ -74,12 +74,12 @@ const About = () => {
   <div className="skills">
       <div className="skill">My Skills</div>
             <p className="para">For an effective and responsive website, I'm proficient at utilizing:</p>
-            <ul className="exp">
-              <li className="exp1"><FontAwesomeIcon icon={faArrowRight} /> HTML</li>
-              <li className="exp1"><FontAwesomeIcon icon={faArrowRight} /> CSS</li>
-              <li className="exp1"><FontAwesomeIcon icon={faArrowRight} /> JavaScript</li>
-              <li className="exp1"><FontAwesomeIcon icon={faArrowRight} /> React</li>
-            </ul>
+            <div className="exp">
+              <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> HTML</div>
+              <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> CSS</div>
+              <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> JavaScript</div>
+              <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> React</div>
+            </div>
     </div>
     </AnimationOnScroll>
     </div>
