@@ -83,13 +83,17 @@ body{
     cursor: pointer;
 }
 
+.social1{
+    display: none;
+}
+
 .contents{
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
     /* height: 150px; */
-    gap: 100px;
+    gap: 140px;
     font-size: 30px;
     margin-top: 50px;
 }
@@ -98,16 +102,21 @@ body{
     margin-bottom: 20px;
     background-color: #fff;
     /* border: 1px solid #000; */
-    width: 65px;
+    width: 5%;
     height: auto;
     /* gap: 30px; */
     margin-top: 65px;
 }
 
+.web3{
+    padding-bottom: 5px;
+    font-size: 35px;
+}
+
 .socials{
     /* background-color: #fff; */
     color: #000;
-    margin-left: 20px;
+    margin-left: 15px;
     gap: 40px;
     /* margin-bottom: 50px; */
 }
@@ -115,6 +124,7 @@ body{
 
 /* Home section */
 .profile{
+    width: 95%;
     text-align: center;
 }
 
@@ -123,8 +133,8 @@ body{
 }
 
 .able{
-    width: 1090px;
-    margin-right: 60px
+    width: 100%;
+    max-width: 1160px;
 }
 
 .abilities{
@@ -393,7 +403,7 @@ body{
 }
 
 .exp1{
-    padding-bottom: 10px;
+    padding-bottom: 7px;
 }
 
 .exp1:hover{
@@ -429,7 +439,6 @@ body{
     height: 61px;
     padding: 5px;
     border-radius: 5px; */
-
 }
 
 .contact{
@@ -599,7 +608,12 @@ body{
     }
 
     .socials{
-        margin-left: 7px;
+        margin-left: 10px;
+    }
+
+    .web3{
+        width: 60px;
+        font-size: 30px;
     }
     
     /* About section */
@@ -710,6 +724,32 @@ body{
 
     .data1{
         font-size: 15px;
+    }
+
+    .mail{
+        padding-bottom: 0px;
+    }
+
+    .social1{
+        display: block;
+        /* background-color: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 300px;
+        height: 30px;
+        /* border: 1px solid #707070; */
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .social3{
+        color: #000;
+        font-size: 25px;
+        gap: 40px;
     }
 
     .about{
@@ -862,7 +902,7 @@ body{
         padding: 5px;
       }
 
-      .social2{
+      .social3{
         display: flex;
         justify-items: center;
         align-items: center;
@@ -872,9 +912,32 @@ body{
 
       .mycontact{
         margin: 0 auto;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         /* width: 615px; */
       }
+
+      .icon1{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.icon2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 302px;
+    margin: 0 auto;
+}
+
+.phone1{
+    color: #000;
+    width: 25px;
+    height: 25px;
+}
 
     .contact{
         font-size: 15px;
@@ -960,6 +1023,10 @@ body{
 
     .socials{
         font-size: 22px;
+    }
+
+    .social3{
+        font-size: 25px;
     }
 
     .project{
@@ -1155,6 +1222,7 @@ body{
 
     .mycontact{
         margin-left: 10px;
+        margin-bottom: 20px;
     }
 
     .contact{
@@ -1168,6 +1236,20 @@ body{
 
     .err{
         font-size: 12px;
+    }
+
+    .icon1{
+        width: 255px;
+        margin-bottom: 3px;
+    }
+
+    .icon2{
+        width: 255px;
+    }
+
+    .phone1{
+        width: 29px;
+        height: 32px;
     }
 
   }
@@ -1189,6 +1271,10 @@ body{
     }
 
     /* Contact section */
+    .mycontact{
+        margin-bottom: 15px;
+    }
+    
     .social2{
         display: flex;
         justify-items: center;
@@ -1232,10 +1318,18 @@ body{
         width: 290px;
     }
 
+    .mycontact{
+        margin-bottom: 13px;
+    }
+
     .social2{
         display: flex;
         justify-items: center;
         align-items: center;
+      }
+
+      .social3{
+        font-size: 20px;
       }
 
       .social{
@@ -1249,6 +1343,20 @@ body{
 
       .area{
         width: 100%;
+      }
+
+      .icon1{
+        width: 234px;
+        margin-bottom: 5px;
+      }
+
+      .icon2{
+        width: 234px;
+      }
+
+      .phone1{
+        width: 29px;
+        height: 29px;
       }
 
       .contact{

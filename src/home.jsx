@@ -55,12 +55,12 @@ const Home = () => {
       
       <div className='contents'>
         <div className='social'>
-        <div><a className='socials' href=''><FontAwesomeIcon icon={faGithub} /></a></div>
-          <div><a className='socials' href=''><FontAwesomeIcon icon={faLinkedin} /></a></div>
-          <div><a className='socials' href=''><FontAwesomeIcon icon={faXTwitter} /></a></div>
-          <div><a className='socials' href=''><FontAwesomeIcon icon={faYoutube} /></a></div>
-          <div><a className='socials' href=''><FontAwesomeIcon icon={faFacebook} /></a></div>
-          <div><a className='socials' href=''><FontAwesomeIcon icon={faSquareInstagram} /></a></div>
+        <div className="web3"><a className='socials' href='https://github.com/emmerson121'><FontAwesomeIcon icon={faGithub} /></a></div>
+          <div className="web3"><a className='socials' href='https://ng.linkedin.com/in/emmanuel-ebiefie-51522625a'><FontAwesomeIcon icon={faLinkedin} /></a></div>
+          <div className="web3"><a className='socials' href='https://twitter.com/emmerson017'><FontAwesomeIcon icon={faXTwitter} /></a></div>
+          <div className="web3"><a className='socials' href='https://youtube.com/@emmerson017'><FontAwesomeIcon icon={faYoutube} /></a></div>
+          <div className="web3"><a className='socials' href='https://www.facebook.com/emmerson.ebiefie'><FontAwesomeIcon icon={faFacebook} /></a></div>
+          <div className="web3"><a className='socials' href='https://www.instagram.com/emmerson150/'><FontAwesomeIcon icon={faSquareInstagram} /></a></div>
         </div>
 
         <div className='profile'>
@@ -75,6 +75,7 @@ const Home = () => {
       <div className='projects'>
       <button className='project'><a className="proj" href="./project">PROJECTS</a></button>
       </div>
+
 
       </div>
 
