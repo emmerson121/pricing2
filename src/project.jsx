@@ -7,8 +7,10 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 // import flower from './img/flower.png';
 // import blue from './img/blue.png';
 import cover3 from './img/cover3.jpg';
-import facebook from './img/facebook.png';
-import linkedin from './img/linkedin.png';
+import adane from './img/adanetech.png';
+import marat from './img/marat.png';
+// import facebook from './img/facebook.png';
+// import linkedin from './img/linkedin.png';
 import emmerson from './img/emmerson.png';
 import microgpt from './img/microgpt.png';
 import completeweb from './img/completeweb.png';
@@ -18,6 +20,15 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Project = () => {
   const [toggle, setToggle] = useState(true);
+  const [imgShow1, setImgShow1] = useState(true);
+  const [imgShow2, setImgShow2] = useState(true);
+  const [imgShow3, setImgShow3] = useState(true);
+  const [imgShow4, setImgShow4] = useState(true);
+  const [imgShow5, setImgShow5] = useState(true);
+  const [imgShow6, setImgShow6] = useState(true);
+  const [imgPop, setImgPop] = useState(false);
+  const [name, setName] = useState('Adane Technology');
+
     const toggleModal = () => {
       setToggle(!toggle);
       document.body.style.overflow = "hidden";
@@ -27,6 +38,23 @@ const Project = () => {
       setToggle(true);
       document.body.style.overflow = "auto";
     };
+
+    const projectInfo = [
+      {projectTitle: 'Adane Technology', projectImg: adane, projectDate: 'November, 2023'},
+      {projectTitle: 'Marat Education Platform', projectImg: marat, projectDate: 'February, 2024'},
+      {projectTitle: 'A Responsive Website with Pricing for Services', projectImg: emmerson, projectDate: 'May, 2024'},
+      {projectTitle: 'My Portfolio with sample from Behance.net Gallery', projectImg: microgpt, projectDate: 'October, 2024'},
+      {projectTitle: 'A Cryptocurrency Website', projectImg: cryptoweb, projectDate: 'February, 2025'},
+      {projectTitle: 'Replica of Microgpt.io Homepage', projectImg: cryptoweb, projectDate: 'April, 2025'}
+    ]
+
+    const imgFilter = () =>{
+      {projectInfo.map().filter((app) =>(
+        <div>
+          app.projectTitle
+        </div>
+      ))}
+    }
   
     return(
         <div className="container">
@@ -45,67 +73,78 @@ const Project = () => {
         <div className="pro">Projects</div>
 
       <div className="central">      
-        <div className="fix"> 
-        <div className="row1">
-        <div className="imgDiv">
-            <img className="sec" src={facebook} alt="" />
+      <div className="roller">
+        <div className="row3">
+        <div className="imgDiv1">
+            <img className="sec" src={adane} alt="" />
           </div>
-
-          <div className="page">Facebook Sign up page</div>
+ 
+{/* {!imgShow1 ? 
+        <div className="imgDetails">
+          <div className="page">Adane Technology</div>
           <div className="page1">November, 2023</div>  
-          {/* <button className="page2">See more...</button>       */}
+          </div>
+  : ''} */}
         </div>
 
-        <div className="row2">
-        <div className="imgDiv">
-            <img className="sec" src={linkedin} alt="" />
+        <div className="row3">
+        <div className="imgDiv1" >
+            <img className="sec" src={marat} alt="" />
           </div>
 
-          <div className="page">LinkedIn Sign up page</div>
+{/* {!imgShow2 ? 
+          <div>
+          <div className="page">Marat Educational Platform</div>
           <div className="page2">February, 2024</div>
-          {/* <button className="page2">See more...</button>          */}
-        </div>
-        </div>
+          </div>
+        : ''} */}
 
-        <div className="fix">
+          </div>
+
+    
         <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={completeweb} alt="" />
           </div>
 
+{/* {!imgShow3 ? 
+        <div>
           <div className="page">A Responsive Website with Pricing for Services</div>
-          <div className="page4">May, 2024</div>  
+          <div className="page4">May, 2024</div> 
+        </div> 
+        : ''} */}
         </div>
         
-        <div className="row4">
+        <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={emmerson} alt="" />
           </div>
 
+{/* {!imgShow4 ? 
+        <div>
           <div className="page">My Portfolio with sample from Behance.net Gallery</div>
           <div className="page4">November, 2024</div>
-          {/* <button className="page2">See more...</button>        */}
         </div>
+        : ''} */}
         </div>
-
-        <div className="fix">
-        <div className="row5">
+  
+        <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={cryptoweb} alt="" />
           </div>
 
-          <div className="page">A Cryptocurrency Website</div>
-          <div className="page5">May, 2024</div>  
+          {/* <div className="page">A Cryptocurrency Website</div>
+          <div className="page5">May, 2024</div>   */}
           {/* <button className="page2">See more...</button>   */}
         </div>
 
-        <div className="row6">
+        <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={microgpt} alt="" />
           </div>
 
-          <div className="page">Replica of Microgpt.io Homepage</div>
-          <div className="page6">November, 2024</div>
+          {/* <div className="page">Replica of Microgpt.io Homepage</div>
+          <div className="page6">November, 2024</div> */}
           {/* <button className="page2">See more...</button>          */}
         </div>
         </div>
@@ -127,8 +166,25 @@ const Project = () => {
                   </div>
                 </div>
                 : ''}
+
+{imgPop ? 
+                <div className="imgContainer">
+                  <div className="imgContainer1">
+                    <div className="imgContainer2">
+                      <img src={adane} alt="" />
+                    </div>
+
+                    <div className="imgDetails imgInfo">
+              <div className="page">Adane Technology</div>
+              <div className="page1">November, 2023</div>  
+          </div>
+                  </div>
+                </div>
+
+              : ''}
         </div>
     )
+
 }
 
 export default Project;

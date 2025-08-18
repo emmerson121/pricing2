@@ -55,7 +55,7 @@ const About = () => {
         <AnimationOnScroll animateIn="animate__slideInLeft">
       <div className="about">
       <div className="about1">About Emmerson</div>
-        <div className="web">I'm a Front-End Web Developer who's passionate about creativity and contributing to the success of innovative projects.</div>
+        <div className="web">I'm a Front-End Web Developer dedicated towards creativity, building user-friendly UIs with 100% interactivity, and contributing to the success of innovative projects</div>
       </div>
       </AnimationOnScroll>
 
@@ -65,23 +65,23 @@ const About = () => {
         come across several projects, connected with leading 
         minds, and personalities. All of these 
         has helped to shape me, provide me with the necessary 
-        experiences, and help me explore various branches in 
-        programming.</div>
+        experiences, and help me explore various programming languages in 
+        web development.</div>
 </div>
 </AnimationOnScroll>
 
-<AnimationOnScroll animateIn="animate__slideInLeft">
+
   <div className="skills">
       <div className="skill">My Skills</div>
             <p className="para">For an effective and responsive website, I'm proficient at utilizing:</p>
             <div className="exp">
               <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> HTML</div>
               <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> CSS</div>
+              <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> Tailwind</div>
               <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> JavaScript</div>
               <div className="exp1"><FontAwesomeIcon icon={faArrowRight} /> React</div>
             </div>
     </div>
-    </AnimationOnScroll>
     </div>
         </div>
 
