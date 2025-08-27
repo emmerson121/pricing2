@@ -64,10 +64,10 @@ const Home = () => {
         </div>
 
         <div className='profile'>
-          <h2 className='name1'>Hey, I'm Ebiefie Emmerson</h2>
+          <h2 className='name1'>Hi, I'm Ebiefie Emmerson</h2>
           <div className="able">
-          <div className='abilities'>A Front-End centered Web Developer building the Front-End of Websites and 
-            Web Applications that results to the success of the overall performance.</div>
+          <div className='abilities'>I'm a Front-End Web Developer focused on building Websites and Mobile Applications, leading to the overall 
+            success of projects.</div>
         </div>
         </div>
       </div>

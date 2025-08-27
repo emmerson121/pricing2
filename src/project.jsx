@@ -26,7 +26,7 @@ const Project = () => {
   const [imgShow4, setImgShow4] = useState(true);
   const [imgShow5, setImgShow5] = useState(true);
   const [imgShow6, setImgShow6] = useState(true);
-  const [imgPop, setImgPop] = useState(false);
+  const [imgPop, setImgPop] = useState(null);
   const [name, setName] = useState('Adane Technology');
 
     const toggleModal = () => {
@@ -40,21 +40,21 @@ const Project = () => {
     };
 
     const projectInfo = [
-      {projectTitle: 'Adane Technology', projectImg: adane, projectDate: 'November, 2023'},
-      {projectTitle: 'Marat Education Platform', projectImg: marat, projectDate: 'February, 2024'},
-      {projectTitle: 'A Responsive Website with Pricing for Services', projectImg: emmerson, projectDate: 'May, 2024'},
-      {projectTitle: 'My Portfolio with sample from Behance.net Gallery', projectImg: microgpt, projectDate: 'October, 2024'},
-      {projectTitle: 'A Cryptocurrency Website', projectImg: cryptoweb, projectDate: 'February, 2025'},
-      {projectTitle: 'Replica of Microgpt.io Homepage', projectImg: cryptoweb, projectDate: 'April, 2025'}
+      {projectTitle: 'A Responsive Website with Pricing for Services', projectImg: completeweb, projectDate: 'May, 2023', projectName: 'Visit project', projectLink: 'https://facebook.com'},
+      {projectTitle: 'Adane Technology', projectImg: adane, projectDate: 'November, 2023', projectName: 'Visit project', projectLink: 'https://adiele.vercel.app'},
+      {projectTitle: 'Marat Education Platform', projectImg: marat, projectDate: 'February, 2024', projectName: 'Visit project', projectLink: 'https://neyenwa.vercel.app'},
+      {projectTitle: 'My Portfolio with sample from Behance.net Gallery', projectImg: emmerson, projectDate: 'October, 2024', projectName: 'Visit project', projectLink: 'https://instagram.com'},
+      {projectTitle: 'A Cryptocurrency Website', projectImg: cryptoweb, projectDate: 'February, 2025', projectName: 'Visit project', projectLink: 'https://google.com'},
+      {projectTitle: 'Replica of Microgpt.io Homepage', projectImg: microgpt, projectDate: 'April, 2025', projectName: 'Visit project', projectLink: 'https://chatgpt.com'}
     ]
 
-    const imgFilter = () =>{
-      {projectInfo.map().filter((app) =>(
-        <div>
-          app.projectTitle
-        </div>
-      ))}
-    }
+    // const imgFilter = () =>{
+    //   {projectInfo.map().filter((app) =>(
+    //     <div>
+    //       app.projectTitle
+    //     </div>
+    //   ))}
+    // }
   
     return(
         <div className="container">
@@ -74,79 +74,45 @@ const Project = () => {
 
       <div className="central">      
       <div className="roller">
-        <div className="row3">
-        <div className="imgDiv1">
-            <img className="sec" src={adane} alt="" />
-          </div>
- 
-{/* {!imgShow1 ? 
-        <div className="imgDetails">
-          <div className="page">Adane Technology</div>
-          <div className="page1">November, 2023</div>  
-          </div>
-  : ''} */}
-        </div>
 
-        <div className="row3">
+        {projectInfo.map((app) =>(
+        <div className="row3" key={app}>
+        <div className="imgDiv1">
+            <img className="sec" src={app.projectImg} alt="" onClick={() => setImgPop(app)} />
+          </div>
+        </div>
+        ))}
+
+        {/* <div className="row3">
         <div className="imgDiv1" >
             <img className="sec" src={marat} alt="" />
           </div>
-
-{/* {!imgShow2 ? 
-          <div>
-          <div className="page">Marat Educational Platform</div>
-          <div className="page2">February, 2024</div>
-          </div>
-        : ''} */}
-
-          </div>
+          </div> */}
 
     
-        <div className="row3">
+        {/* <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={completeweb} alt="" />
           </div>
-
-{/* {!imgShow3 ? 
-        <div>
-          <div className="page">A Responsive Website with Pricing for Services</div>
-          <div className="page4">May, 2024</div> 
-        </div> 
-        : ''} */}
-        </div>
+        </div> */}
         
-        <div className="row3">
+        {/* <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={emmerson} alt="" />
           </div>
-
-{/* {!imgShow4 ? 
-        <div>
-          <div className="page">My Portfolio with sample from Behance.net Gallery</div>
-          <div className="page4">November, 2024</div>
-        </div>
-        : ''} */}
-        </div>
+        </div> */}
   
-        <div className="row3">
+        {/* <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={cryptoweb} alt="" />
           </div>
+        </div> */}
 
-          {/* <div className="page">A Cryptocurrency Website</div>
-          <div className="page5">May, 2024</div>   */}
-          {/* <button className="page2">See more...</button>   */}
-        </div>
-
-        <div className="row3">
+        {/* <div className="row3">
         <div className="imgDiv1">
             <img className="sec" src={microgpt} alt="" />
           </div>
-
-          {/* <div className="page">Replica of Microgpt.io Homepage</div>
-          <div className="page6">November, 2024</div> */}
-          {/* <button className="page2">See more...</button>          */}
-        </div>
+        </div> */}
         </div>
 
         </div>
@@ -167,21 +133,32 @@ const Project = () => {
                 </div>
                 : ''}
 
-{imgPop ? 
-                <div className="imgContainer">
-                  <div className="imgContainer1">
+        {imgPop && 
+          <>
+                <div className="imgContainer" onClick={() =>setImgPop(null)}>
+                  
+                </div>
+  
+                <div className="imgContainer1">
                     <div className="imgContainer2">
-                      <img src={adane} alt="" />
+                      <img src={imgPop.projectImg} alt="" />
                     </div>
 
                     <div className="imgDetails imgInfo">
-              <div className="page">Adane Technology</div>
-              <div className="page1">November, 2023</div>  
+              <div className="page">{imgPop.projectTitle}</div>
+              <div className="page1">{imgPop.projectDate}</div> 
+              <div className="linkInfo">
+              <a className="linkDetails" href={imgPop.projectLink}>
+              {imgPop.projectName}
+              <svg className="arrowImg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M98.9 114.6C91.5 130.6 98.5 149.7 114.5 157.1L467.6 320L114.6 483C98.6 490.4 91.5 509.4 99 525.5C106.5 541.6 125.4 548.5 141.5 541.1L557.5 349.1C568.8 343.9 576.1 332.5 576.1 320C576.1 307.5 568.8 296.2 557.5 290.9L141.4 99C125.4 91.6 106.3 98.6 98.9 114.6z"/></svg>
+              <svg className="arrowImg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M98.9 114.6C91.5 130.6 98.5 149.7 114.5 157.1L467.6 320L114.6 483C98.6 490.4 91.5 509.4 99 525.5C106.5 541.6 125.4 548.5 141.5 541.1L557.5 349.1C568.8 343.9 576.1 332.5 576.1 320C576.1 307.5 568.8 296.2 557.5 290.9L141.4 99C125.4 91.6 106.3 98.6 98.9 114.6z"/></svg>
+              </a>
+              </div>
           </div>
                   </div>
-                </div>
+                  </>
 
-              : ''}
+              }
         </div>
     )
 

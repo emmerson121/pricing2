@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import './styles.css';
 import validator from 'validator';
 import Navbar from "./navbar";
@@ -14,6 +15,7 @@ import { faFacebook, faGithub, faLinkedin, faSquareInstagram, faXTwitter, faYout
 
 const Contact = () => {
   const [name, setName] = useState('');
+  const [formData, setFormData] = useState({name: '', email: '', number: '', message: ''});
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [message, setMessage] = useState('');
@@ -21,7 +23,19 @@ const Contact = () => {
   const [phoneStatement, setPhoneStatement] = useState('');
   const [messageStatement, setMessageStatement] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(null);
   const [toggle, setToggle] = useState(true);
+  const [number1, setNumber1] = useState(formData.number)
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+  });
+
+  const [errors1, setErrors1] = useState('');
+  const [errors2, setErrors2] = useState('');
+   const [errors3, setErrors3] = useState('');
+
   const toggleModal = () => {
     setToggle(!toggle);
     document.body.style.overflow = "hidden";
@@ -46,7 +60,59 @@ const Contact = () => {
     
   }
 
-  const submitButton = () =>{
+  const onChangeHandler = (e) =>{
+     const { name, value, } = e.target;
+
+    setFormData(prevData => ({
+          ...prevData,
+          [name]: value
+        }));
+        console.log(formData)
+        let errorMessage = '';
+        let errorMessage1 = '';
+        let errorMessage2 = '';
+
+    if (name === 'name'){
+      if (value.trim() === '') {
+        errorMessage = 'Name is required';
+      }
+      else if(value.length <= 5){
+        errorMessage = 'Name must not be less than 6 characters';
+      }
+
+    }
+
+    if (name === 'email') {
+      if (validator.isEmail(formData.email) !== true) {
+        errorMessage1 = 'Invalid email address';
+      } else if (value.trim() === '') {
+        errorMessage1 = 'Email is required';
+      }
+    }
+    
+    if (name === 'number'){
+      if (/^\d*$/.test(value)) {
+      setNumber1(value);
+    }
+
+    if (validator.isMobilePhone(number1 ['en-NG'])){
+    errorMessage2 = 'Valid phone number'
+  }
+  }
+
+    setErrors1(errorMessage);
+    setErrors2(errorMessage1);
+    setErrors3(errorMessage2);
+    
+
+    // setErrors((prevErrors) => ({
+    //   ...prevErrors,
+    //   [name]: errorMessage,
+    // }));
+  }
+
+  const submitButton = (e) =>{
+    e.preventDefault();
     if(name.length === 0 ){
       setError('Name field cannot be empty');
     }
@@ -65,7 +131,16 @@ const Contact = () => {
     else if(validator.isEmail(email) !== true){
       setEmailStatement('Invalid email format');
     }
-    else{ }
+    else{
+      axios.post('http://localhost:5000/form', formData)
+  .then(response => {
+    console.log('Success:', response.data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+      setSuccess('Thanks for your response');
+    }
   }
 
   const handleSubmit1 = (e) =>{
@@ -143,28 +218,29 @@ const Contact = () => {
         <form className="wrap">
           <div className="formControl">
           <div className="">
-          <input className="newform" type="text" placeholder="Enter name" onChange={handleSubmit}/>
-          <div className="err" id="name">{error}</div>
+          <input className="newform" type="text" value={formData.name} placeholder="Enter name" name="name" onChange={onChangeHandler}/>
+          {errors1 && <div className="err" id="name">{errors1}</div>}
           </div>
           
 
           <div className="">
-          <input className="newform" type="email" placeholder="Enter email" onChange={handleSubmit1}/>
-          <div className="err" id="email">{emailStatement}</div>
+          <input className="newform" type="email" placeholder="Enter email" value={formData.email} name="email" onChange={onChangeHandler}/>
+          {errors2 && <div className="err" id="email">{errors2}</div>}
           </div>
 
           <div className="">
-          <input className="newform" type="number" placeholder="Phone" onChange={handleSubmit2}/>
+          <input className="newform" type="text" maxLength={11} placeholder="Phone" value={number1} name="number" onChange={onChangeHandler}/>
           <div className="err" id="number">{phoneStatement}</div>
           </div>
 
           <div className="">
-          <textarea className="area" placeholder="Enter message..." onChange={handleSubmit3}></textarea>
+          <textarea className="area" placeholder="Enter message..." value={formData.message} name="message" onChange={onChangeHandler}></textarea>
           <div className="err" id="message">{messageStatement}</div>
           </div>
 
           <div className="butt">
           <div className="butt1" id="send" onClick={submitButton}>Submit</div>
+          {/* <div className="err2">{success}</div> */}
           </div>
 
           </div>
@@ -217,6 +293,17 @@ const Contact = () => {
           </div>
         </div>
         : ''}
+
+        {success &&
+        <div className="response1">
+          <div className="response">
+          <div className="success">
+            <svg className="success1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM404.4 276.7L324.4 404.7C320.2 411.4 313 415.6 305.1 416C297.2 416.4 289.6 412.8 284.9 406.4L236.9 342.4C228.9 331.8 231.1 316.8 241.7 308.8C252.3 300.8 267.3 303 275.3 313.6L302.3 349.6L363.7 251.3C370.7 240.1 385.5 236.6 396.8 243.7C408.1 250.8 411.5 265.5 404.4 276.8z"/></svg>
+            </div>
+            <div className="reach">Thank you for reaching out!</div>
+          </div>
+        </div>
+        }
         </div>
     )
 }

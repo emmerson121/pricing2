@@ -52,10 +52,13 @@ const About = () => {
         </div> */}
       
       <div className="fixed">
+
+        <div className="about1">About Emmerson</div>
+        
         <AnimationOnScroll animateIn="animate__slideInLeft">
       <div className="about">
-      <div className="about1">About Emmerson</div>
-        <div className="web">I'm a Front-End Web Developer dedicated towards creativity, building user-friendly UIs with 100% interactivity, and contributing to the success of innovative projects</div>
+      
+        <div className="web">I'm a Front-End Web Developer dedicated towards creativity, building user-friendly UIs with 100% interactivity, and contributing to the success of innovative projects.</div>
       </div>
       </AnimationOnScroll>
 
@@ -65,7 +68,7 @@ const About = () => {
         come across several projects, connected with leading 
         minds, and personalities. All of these 
         has helped to shape me, provide me with the necessary 
-        experiences, and help me explore various programming languages in 
+        experiences, and aided me in exploring various programming languages in 
         web development.</div>
 </div>
 </AnimationOnScroll>
