@@ -520,7 +520,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 10px;
+    /* gap: 10px; */
     padding: 10px;
 }
 
@@ -1163,7 +1163,7 @@ body{
     .pro{
         font-size: 30px;
         margin-top: 20px;
-        margin-bottom: 20px
+        margin-bottom: 0px
     }
 
     .imgDiv1{
@@ -1205,13 +1205,9 @@ body{
         margin-bottom: 10px;
     }
 
-    .roller{
-        gap: 10px;
-    }
-
     .row3{
         height: auto;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
     }  
 
     .imgContainer1{

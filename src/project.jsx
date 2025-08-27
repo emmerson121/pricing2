@@ -40,10 +40,10 @@ const Project = () => {
     };
 
     const projectInfo = [
-      {projectTitle: 'A Responsive Website with Pricing for Services', projectImg: completeweb, projectDate: 'May, 2023', projectName: 'Visit project', projectLink: 'https://facebook.com'},
+      {projectTitle: 'A Responsive Website with Pricing for Services', projectImg: completeweb, projectDate: 'May, 2023', projectName: 'Visit project', projectLink: 'https://mayweb.vercel.app/'},
       {projectTitle: 'Adane Technology', projectImg: adane, projectDate: 'November, 2023', projectName: 'Visit project', projectLink: 'https://adiele.vercel.app'},
       {projectTitle: 'Marat Education Platform', projectImg: marat, projectDate: 'February, 2024', projectName: 'Visit project', projectLink: 'https://neyenwa.vercel.app'},
-      {projectTitle: 'My Portfolio with sample from Behance.net Gallery', projectImg: emmerson, projectDate: 'October, 2024', projectName: 'Visit project', projectLink: 'https://instagram.com'},
+      {projectTitle: 'My Portfolio with sample from Behance.net Gallery', projectImg: emmerson, projectDate: 'October, 2024', projectName: 'Visit project', projectLink: 'https://personalportfolio-beta-liart.vercel.app/'},
       {projectTitle: 'A Cryptocurrency Website', projectImg: cryptoweb, projectDate: 'February, 2025', projectName: 'Visit project', projectLink: 'https://google.com'},
       {projectTitle: 'Replica of Microgpt.io Homepage', projectImg: microgpt, projectDate: 'April, 2025', projectName: 'Visit project', projectLink: 'https://chatgpt.com'}
     ]
