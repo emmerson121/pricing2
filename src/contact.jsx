@@ -25,7 +25,7 @@ const Contact = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(null);
   const [toggle, setToggle] = useState(true);
-  const [number1, setNumber1] = useState(formData.number)
+  const [number1, setNumber1] = useState(formData.number);
 
   const [errors, setErrors] = useState({
     name: '',
@@ -72,7 +72,7 @@ const Contact = () => {
         let errorMessage1 = '';
         let errorMessage2 = '';
 
-    if (name === 'name'){
+    if(name === 'name'){
       if (value.trim() === '') {
         errorMessage = 'Name is required';
       }
@@ -82,21 +82,24 @@ const Contact = () => {
 
     }
 
-    if (name === 'email') {
-      if (validator.isEmail(formData.email) !== true) {
+    if(name === 'email') {
+      if(validator.isEmail(formData.email) !== true) {
         errorMessage1 = 'Invalid email address';
-      } else if (value.trim() === '') {
+      } else if(value.trim() === '') {
         errorMessage1 = 'Email is required';
       }
     }
     
-    if (name === 'number'){
+    if(name === 'number'){
       if (/^\d*$/.test(value)) {
       setNumber1(value);
     }
 
-    if (validator.isMobilePhone(number1 ['en-NG'])){
-    errorMessage2 = 'Valid phone number'
+    if(validator.isMobilePhone(value, 'en-NG')){
+    errorMessage2 = ''
+  }
+  else{
+    errorMessage2 = 'Invalid phone number';
   }
   }
 
@@ -111,28 +114,29 @@ const Contact = () => {
     // }));
   }
 
-  const submitButton = (e) =>{
+  const submitButton = async(e) =>{
     e.preventDefault();
-    if(name.length === 0 ){
-      setError('Name field cannot be empty');
-    }
-    else if(email.length === 0 ){
-      setEmailStatement('Email field cannot be empty');
-    }
-    else if(number.length === 0 ){
-      setPhoneStatement('This field cannot be empty')
-    }
-    else if(message.length === 0 ){
-      setMessageStatement('This field cannot be empty');
-    }
-    else if(name.length <= 5){
-      setError('Name must not be less than 6 characters');
-    }
-    else if(validator.isEmail(email) !== true){
-      setEmailStatement('Invalid email format');
-    }
-    else{
-      axios.post('http://localhost:5000/form', formData)
+    // if(name.length === 0 ){
+    //   setError('Name field cannot be empty');
+    // }
+    // else if(email.length === 0 ){
+    //   setEmailStatement('Email field cannot be empty');
+    // }
+    // else if(number.length === 0 ){
+    //   setPhoneStatement('This field cannot be empty')
+    // }
+    // else if(message.length === 0 ){
+    //   setMessageStatement('This field cannot be empty');
+    // }
+    // else if(name.length <= 5){
+    //   setError('Name must not be less than 6 characters');
+    // }
+    // else if(validator.isEmail(email) !== true){
+    //   setEmailStatement('Invalid email format');
+    // }
+    // else{
+      console.log(formData);
+      await axios.post('http://localhost:5000/forms', formData)
   .then(response => {
     console.log('Success:', response.data);
   })
@@ -140,7 +144,7 @@ const Contact = () => {
     console.error('Error:', error);
   });
       setSuccess('Thanks for your response');
-    }
+    // }
   }
 
   const handleSubmit1 = (e) =>{
@@ -230,7 +234,7 @@ const Contact = () => {
 
           <div className="">
           <input className="newform" type="text" maxLength={11} placeholder="Phone" value={number1} name="number" onChange={onChangeHandler}/>
-          <div className="err" id="number">{phoneStatement}</div>
+          <div className="err" id="number">{errors3}</div>
           </div>
 
           <div className="">
