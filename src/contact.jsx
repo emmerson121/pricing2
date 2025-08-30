@@ -136,7 +136,7 @@ const Contact = () => {
     // }
     // else{
       console.log(formData);
-      await axios.post('http://localhost:5000/forms', formData)
+      await axios.post('https://portfolioserver-ngna.onrender.com/forms', formData)
   .then(response => {
     console.log('Success:', response.data);
   })
