@@ -55,14 +55,13 @@ const About = () => {
 
         <div className="about1">About Emmerson</div>
         
-        <AnimationOnScroll animateIn="animate__slideInLeft">
       <div className="about">
       
         <div className="web">I'm a Front-End Web Developer dedicated towards creativity, building user-friendly UIs with 100% interactivity, and contributing to the success of innovative projects.</div>
       </div>
-      </AnimationOnScroll>
+      
 
-<AnimationOnScroll animateIn="animate__slideInLeft">
+
 <div className="data">
       <div className="data1">Having being in the tech space for some years, I've 
         come across several projects, connected with leading 
@@ -71,7 +70,7 @@ const About = () => {
         experiences, and aided me in exploring various programming languages in 
         web development.</div>
 </div>
-</AnimationOnScroll>
+
 
 
   <div className="skills">

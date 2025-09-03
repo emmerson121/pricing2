@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, StrictMode } from "react";
 import axios from 'axios';
 import './styles.css';
 import validator from 'validator';
@@ -26,6 +26,11 @@ const Contact = () => {
   const [success, setSuccess] = useState(null);
   const [toggle, setToggle] = useState(true);
   const [number1, setNumber1] = useState(formData.number);
+  const [errorMessage4, setErrorMessage4] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  // const [error9, setError9] = useState('');
+  // const [success9, setSuccess9] = useState(false);
+  // const [modarSuccess, setModarSuccess] = useState(false);
 
   const [errors, setErrors] = useState({
     name: '',
@@ -35,6 +40,9 @@ const Contact = () => {
   const [errors1, setErrors1] = useState('');
   const [errors2, setErrors2] = useState('');
    const [errors3, setErrors3] = useState('');
+   const [errors4, setErrors4] = useState('');
+   
+  //  setModarSuccess(true);
 
   const toggleModal = () => {
     setToggle(!toggle);
@@ -45,20 +53,6 @@ const Contact = () => {
     setToggle(true);
     document.body.style.overflow = "auto";
   };
-
-  const handleSubmit = (e) =>{
-    setName(e.target.value);
-    if(name === ''){
-      setError('Name cannot be empty');
-    }
-    else if(name.length <= 5){
-      setError('Must not be less than 6 characters');
-    }
-    else{
-      setError('');
-    }
-    
-  }
 
   const onChangeHandler = (e) =>{
      const { name, value, } = e.target;
@@ -114,90 +108,77 @@ const Contact = () => {
     // }));
   }
 
-  const submitButton = async(e) =>{
-    e.preventDefault();
-    // if(name.length === 0 ){
-    //   setError('Name field cannot be empty');
-    // }
-    // else if(email.length === 0 ){
-    //   setEmailStatement('Email field cannot be empty');
-    // }
-    // else if(number.length === 0 ){
-    //   setPhoneStatement('This field cannot be empty')
-    // }
-    // else if(message.length === 0 ){
-    //   setMessageStatement('This field cannot be empty');
-    // }
-    // else if(name.length <= 5){
-    //   setError('Name must not be less than 6 characters');
-    // }
-    // else if(validator.isEmail(email) !== true){
-    //   setEmailStatement('Invalid email format');
-    // }
-    // else{
-      console.log(formData);
-      await axios.post('https://portfolioserver-ngna.onrender.com/forms', formData)
-  .then(response => {
+const submitButton = async (e) => {
+  e.preventDefault();
+
+  const { name, email, number, message } = formData;
+  
+  try{
+    if(!name || !email || !number || !message){
+    
+    const intervalId = setInterval(() => {
+      setErrorMessage4('All fields are required.');
+}, 1000);
+
+setTimeout(() => {
+  clearInterval(intervalId);
+  setErrorMessage4('');
+}, 3000); // Stops after 5 seconds
+
+      
+  } else if(!validator.isMobilePhone(number, 'en-NG')){ 
+    const intervalId = setInterval(() => {
+      setErrorMessage4('Invalid phone number.');
+}, 1000);
+
+setTimeout(() => {
+  clearInterval(intervalId);
+  setErrorMessage4('');
+}, 3000); // Stops after 5 seconds
+
+  } else if(!validator.isEmail(email)){
+    const intervalId = setInterval(() => {
+      setErrorMessage4('Invalid email address.');
+}, 1000);
+
+setTimeout(() => {
+  clearInterval(intervalId);
+  setErrorMessage4('');
+}, 3000); // Stops after 5 seconds
+   
+  } 
+  else{
+    const response = await axios.post(
+      'https://portfolioserver-ngna.onrender.com/forms',
+      formData
+    );
     console.log('Success:', response.data);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-      setSuccess('Thanks for your response');
-    // }
+    setSuccess('Thanks for your response');
+    setError(''); // Clear previous error
+  } 
+  } catch (error) {
+    console.error('Submission Error:', error);
+    setError('Something went wrong. Please try again.');
+    setSuccess(''); // Clear success message on error
   }
 
-  const handleSubmit1 = (e) =>{
-    setEmail(e.target.value);
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(validator.isEmail(email) == true){
-      setEmailStatement('')
-    }else{
-      setEmailStatement('Invalid email, please input a valid email');
-    }
-  }
+  setTimeout(() => {
+      setShowModal(true);
 
-  const handleSubmit2 = (e) =>{
-    setNumber(e.target.value);
-    if(number.length == 0 ){
-      setPhoneStatement('Phone number must not be empty');
-    }
-    else if(number.length <= 9 ){
-      setPhoneStatement('Number must not be less than 10');
-    }
-    else{
-      setPhoneStatement('')
-    }
-  }
+      // Hide modal after 3 seconds
+      setTimeout(() => {
+        setShowModal(false);
+      }, 3000);
+    }, 1000);
+ 
+};
 
-  const handleSubmit3 = (e) =>{
-    setMessage(e.target.value);
-    if(message.length <= 5 ){
-      setMessageStatement('Must contain at least 6 characters');
-    }
-    else if(message.length >= 0 ){
-      setMessageStatement('');
-    }
-  }
 
-  // const scroll = () =>
-    // useEffect(() => {
-    //   if (toggle) {
-    //     // Disable scrolling on body when modal is open
-    //     document.body.style.overflow = "hidden";
-    //   } else {
-    //     // Re-enable scrolling when modal is closed
-    //     document.body.style.overflow = "auto";
-    //   }
-  
-    //   // Cleanup on component unmount or when isOpen changes
-    //   return () => {
-    //     document.body.style.overflow = "auto";
-    //   };
-    // }, [toggle]);
-  
-    // if (!toggle) return null;
-  
+
+    
+
+
+
 
     return(
         <div className="container">
@@ -234,7 +215,7 @@ const Contact = () => {
 
           <div className="">
           <input className="newform" type="text" maxLength={11} placeholder="Phone" value={number1} name="number" onChange={onChangeHandler}/>
-          <div className="err" id="number">{errors3}</div>
+          {errors3 && <div className="err" id="number">{errors3}</div>}
           </div>
 
           <div className="">
@@ -243,8 +224,8 @@ const Contact = () => {
           </div>
 
           <div className="butt">
-          <div className="butt1" id="send" onClick={submitButton}>Submit</div>
-          {/* <div className="err2">{success}</div> */}
+          <button className="butt1" id="send" value={formData} onClick={submitButton}>Submit</button>
+          {errorMessage4 && <div className="err2">{errorMessage4}</div>}
           </div>
 
           </div>
@@ -298,7 +279,7 @@ const Contact = () => {
         </div>
         : ''}
 
-        {success &&
+        {success && showModal &&
         <div className="response1">
           <div className="response">
           <div className="success">

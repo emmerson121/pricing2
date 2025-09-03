@@ -260,7 +260,7 @@ body{
 }
 
 .err{
-    /* display: none; */
+    
     font-size: 14px;
     color: #000;
     margin-bottom: 15px;
@@ -268,9 +268,20 @@ body{
 }
 
 .err2{
-    color: green;
+    background-color: #837e7e2e;
+    position: fixed;
+    width: 30%;
+    top: 20%;
+    padding: 10px;
+    color: red;
     font-size: 14px;
     margin-bottom: 15px;
+    border-radius: 8px;
+    z-index: 20;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(20px);  
 }
 
 .response1{
@@ -335,10 +346,11 @@ body{
     color: #000;
     font-size: 15px;
     width: 100px;
-    height: 35px;
-    padding: 5px;
+    height: 42px;
+    padding: 9px;
     border-radius: 5px;
-    text-align: center;
+    /* text-align: center; */
+    border: none;
     box-shadow: 0px 10px 30px 0px rgba(14, 28, 60, 0.15);
     cursor: pointer;
   }
@@ -790,8 +802,8 @@ body{
     }
 
     .bar{
-        font-size: 40px;
-        width: 45px;
+        font-size: 30px;
+        width: 40px;
         /* height: 100% */
     }
 
@@ -966,7 +978,7 @@ body{
 
     .xmark{
         color: #000;
-        font-size: 30px;
+        font-size: 23px;
         padding: 5px;
       }
 
@@ -1023,6 +1035,15 @@ body{
       .imgContainer1{
         width: 50%;
       }
+
+      .butt{
+        width: 80px;
+      }
+
+      .butt1{
+        width: 100%;
+        height: auto;
+      }
   }
 
   @media(max-width: 425px){
@@ -1040,9 +1061,13 @@ body{
     }
 
     .bar{
-        font-size: 40px;
+        font-size: 25px;
         height: 100%;
     }
+
+    .xmark{
+        font-size: 20px;
+      }
 
     .navbar{
         display: none;
@@ -1299,17 +1324,20 @@ body{
         height: 32px;
     }
 
+    .butt{
+        width: 70px;
+      }
+
+      .butt1{
+        font-size: 13px;
+      }
+
   }
 
   @media(max-width: 375px){
     /* Home section */
     .navbar1{
         width: 100%;
-    }
-
-    .bar{
-        /* width: 20px; */
-        font-size: 30px;
     }
 
     .project{
@@ -1355,7 +1383,7 @@ body{
     }
 
     .bar{
-        width: 40px;
+        width: 35px;
     }
 
     .project{
