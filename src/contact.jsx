@@ -272,7 +272,7 @@ setTimeout(() => {
         </div>
         : ''}
 
-        {success &&
+        {success && showModal &&
         <div className="response1">
           <div className="response">
           <div className="success">
