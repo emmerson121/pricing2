@@ -173,13 +173,6 @@ setTimeout(() => {
  
 };
 
-
-
-    
-
-
-
-
     return(
         <div className="container">
             <div  className='fixedWidth'>
@@ -279,7 +272,7 @@ setTimeout(() => {
         </div>
         : ''}
 
-        {success && showModal &&
+        {success &&
         <div className="response1">
           <div className="response">
           <div className="success">

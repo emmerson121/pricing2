@@ -564,10 +564,6 @@ body{
     border-radius: 10px;
   }
 
-  .imgDetails{
-    /* display: none; */
-  }
-
   .page{
     font-size: 21px;
     font-weight: bold;
@@ -916,8 +912,6 @@ body{
     }
 
     /* Project selection */
-
-
     .arrowImg{
         width: 8px;
     }
@@ -928,15 +922,23 @@ body{
         height: auto;
     }
 
-    .imgDiv1{
-        /* width: 100%; */
-    }
-
     .page{
         font-size: 13px;
     }
 
     /* Contact selection */
+    .response{
+        width: 400px;
+    }
+
+    .success{
+        width: 200px;
+    }
+
+    .reach{
+        font-size: 23px;
+    }
+
     .social{
         display: none;
     }
@@ -1073,6 +1075,17 @@ body{
         display: none;
     }
 
+    .response{
+        width: 100%;
+    }
+
+    .success{
+        width: 150px;
+    }
+
+    .reach{
+        font-size: 20px;
+    }
 
     .container1{
         width: 80%;
@@ -1354,12 +1367,7 @@ body{
         width: 7px;
     }
 
-
     /* Contact section */
-    .mycontact{
-        /* margin-bottom: 15px; */
-    }
-    
     .social2{
         display: flex;
         justify-items: center;
@@ -1393,8 +1401,12 @@ body{
     }
 
     /* Contact section */
-    .mycontact{
-        /* margin-bottom: 13px; */
+    .success{
+        width: 130px;
+    }
+
+    .reach{
+        font-size: 18px;
     }
 
     .social2{
