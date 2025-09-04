@@ -250,9 +250,11 @@ body{
 }
 
 .newform{
+    font-family: var(--my-font);
     width: 100%;
     margin-bottom: 10px;
     height: 40px;
+    font-size: 16px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #707070;
@@ -329,6 +331,7 @@ body{
     font-family: var(--my-font);
     width: 100%;
     height: 55px;
+    font-size: 16px;
     margin-bottom: 10px;
     border-radius: 5px;
     padding: 10px;
@@ -751,7 +754,6 @@ body{
     .row3{
         width: calc(50% - 20px);
         height: auto;
-        /* margin: 0 auto; */
     }
 
     .imgDiv1{
@@ -860,7 +862,6 @@ body{
     }
 
     .social1{
-        /* background-color: #fff; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -868,7 +869,6 @@ body{
         width: 100%;
         max-width: 300px;
         height: 30px;
-        /* border: 1px solid #707070; */
         border-radius: 5px;
         margin: 0 auto;
         margin-bottom: 30px;
@@ -889,7 +889,6 @@ body{
         font-size: 30px;
         font-weight: bold;
         margin-bottom: 10px;
-        
     }
 
     .web{
@@ -969,7 +968,6 @@ body{
     .area{
         width: 100%;
         height: 70px;
-        /* margin-top: 15px; */
     }
 
     .xmark1{
@@ -1273,6 +1271,10 @@ body{
         /* margin-top: 30px; */
     }
 
+    .area{
+        font-size: 14px;
+    }
+
     .err2{
         width: 100%;
         font-size: 13px;
@@ -1308,6 +1310,10 @@ body{
 
     .cover{
         background-color: #fff;
+    }
+
+    .newform{
+        font-size: 14px;
     }
 
     .mycontact{
