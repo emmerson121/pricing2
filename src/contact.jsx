@@ -115,7 +115,6 @@ const submitButton = async (e) => {
   
   try{
     if(!name || !email || !number || !message){
-    
     const intervalId = setInterval(() => {
       setErrorMessage4('All fields are required.');
 }, 1000);
@@ -169,9 +168,15 @@ setTimeout(() => {
       setTimeout(() => {
         setShowModal(false);
       }, 3000);
+      setFormData(
+    {name: '', email: '', number: '', message: ''}
+  )
     }, 1000);
  
+    // window.location.reload();
 };
+
+
 
     return(
         <div className="container">
@@ -207,7 +212,7 @@ setTimeout(() => {
           </div>
 
           <div className="">
-          <input className="newform" type="text" maxLength={11} placeholder="Phone" value={number1} name="number" onChange={onChangeHandler}/>
+          <input className="newform" type="tel" maxLength={11} placeholder="Phone" value={number1} name="number" onChange={onChangeHandler}/>
           {errors3 && <div className="err" id="number">{errors3}</div>}
           </div>
 
