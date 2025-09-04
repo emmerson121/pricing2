@@ -19,8 +19,6 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [message, setMessage] = useState('');
-  const [emailStatement, setEmailStatement] = useState('');
-  const [phoneStatement, setPhoneStatement] = useState('');
   const [messageStatement, setMessageStatement] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(null);
@@ -28,10 +26,6 @@ const Contact = () => {
   const [number1, setNumber1] = useState(formData.number);
   const [errorMessage4, setErrorMessage4] = useState('');
   const [showModal, setShowModal] = useState(false);
-  // const [error9, setError9] = useState('');
-  // const [success9, setSuccess9] = useState(false);
-  // const [modarSuccess, setModarSuccess] = useState(false);
-
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -61,7 +55,7 @@ const Contact = () => {
           ...prevData,
           [name]: value
         }));
-        console.log(formData)
+
         let errorMessage = '';
         let errorMessage1 = '';
         let errorMessage2 = '';
@@ -90,22 +84,15 @@ const Contact = () => {
     }
 
     if(validator.isMobilePhone(value, 'en-NG')){
-    errorMessage2 = ''
+    errorMessage2 = '';
   }
   else{
     errorMessage2 = 'Invalid phone number';
   }
   }
-
     setErrors1(errorMessage);
     setErrors2(errorMessage1);
     setErrors3(errorMessage2);
-    
-
-    // setErrors((prevErrors) => ({
-    //   ...prevErrors,
-    //   [name]: errorMessage,
-    // }));
   }
 
 const submitButton = async (e) => {
@@ -168,13 +155,16 @@ setTimeout(() => {
       setTimeout(() => {
         setShowModal(false);
       }, 3000);
-      setFormData(
+    }, 1000);
+
+    setFormData(
     {name: '', email: '', number: '', message: ''}
   )
-    }, 1000);
  
     // window.location.reload();
 };
+
+
 
 
 
@@ -218,7 +208,7 @@ setTimeout(() => {
 
           <div className="">
           <textarea className="area" placeholder="Enter message..." value={formData.message} name="message" onChange={onChangeHandler}></textarea>
-          <div className="err" id="message">{messageStatement}</div>
+          {/* <div className="err" id="message">{messageStatement}</div> */}
           </div>
 
           <div className="butt">
