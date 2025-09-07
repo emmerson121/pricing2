@@ -35,6 +35,7 @@ const Contact = () => {
   const [errors2, setErrors2] = useState('');
    const [errors3, setErrors3] = useState('');
    const [errors4, setErrors4] = useState('');
+   const [loading, setLoading] = useState(false);
    
   //  setModarSuccess(true);
 
@@ -97,12 +98,13 @@ const Contact = () => {
 
 const submitButton = async (e) => {
   e.preventDefault();
-
+  
   const { name, email, number, message } = formData;
   
   try{
     if(!name || !email || !number || !message){
     const intervalId = setInterval(() => {
+      setLoading(false);
       setErrorMessage4('All fields are required.');
 }, 1000);
 
@@ -114,6 +116,7 @@ setTimeout(() => {
       
   } else if(!validator.isMobilePhone(number, 'en-NG')){ 
     const intervalId = setInterval(() => {
+      setLoading(false);
       setErrorMessage4('Invalid phone number.');
 }, 1000);
 
@@ -124,6 +127,7 @@ setTimeout(() => {
 
   } else if(!validator.isEmail(email)){
     const intervalId = setInterval(() => {
+      setLoading(false);
       setErrorMessage4('Invalid email address.');
 }, 1000);
 
@@ -134,16 +138,22 @@ setTimeout(() => {
    
   } 
   else{
+    setLoading(true);
     const response = await axios.post(
       'https://portfolioserver-ngna.onrender.com/forms',
       formData
     );
-    console.log('Success:', response.data);
+    // console.log('Success:', response.data);
+    setLoading(false);
+    setFormData(
+    {name: '', email: '', number1: '', message: ''}
+  )
+  setNumber1('');
     setSuccess('Thanks for your response');
     setError(''); // Clear previous error
   } 
   } catch (error) {
-    console.error('Submission Error:', error);
+    // console.error('Submission Error:', error);
     setError('Something went wrong. Please try again.');
     setSuccess(''); // Clear success message on error
   }
@@ -156,10 +166,6 @@ setTimeout(() => {
         setShowModal(false);
       }, 3000);
     }, 1000);
-
-    setFormData(
-    {name: '', email: '', number: '', message: ''}
-  )
  
     // window.location.reload();
 };
@@ -212,7 +218,7 @@ setTimeout(() => {
           </div>
 
           <div className="butt">
-          <button className="butt1" id="send" value={formData} onClick={submitButton}>Submit</button>
+          <button className="butt1" id="send" value={formData} onClick={submitButton}>{loading ? 'Loading' : 'Submit'}</button>
           {errorMessage4 && <div className="err2">{errorMessage4}</div>}
           </div>
 
