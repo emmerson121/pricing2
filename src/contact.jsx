@@ -34,7 +34,6 @@ const Contact = () => {
   const [errors1, setErrors1] = useState('');
   const [errors2, setErrors2] = useState('');
    const [errors3, setErrors3] = useState('');
-   const [errors4, setErrors4] = useState('');
    const [loading, setLoading] = useState(false);
    
   //  setModarSuccess(true);
@@ -62,7 +61,7 @@ const Contact = () => {
         let errorMessage2 = '';
 
     if(name === 'name'){
-      if (value.trim() === '') {
+      if(value.trim() === '') {
         errorMessage = 'Name is required';
       }
       else if(value.length <= 5){
@@ -84,7 +83,7 @@ const Contact = () => {
       setNumber1(value);
     }
 
-    if(validator.isMobilePhone(value, 'en-NG')){
+  if(validator.isMobilePhone(value, 'en-NG')){
     errorMessage2 = '';
   }
   else{
@@ -107,30 +106,24 @@ const submitButton = async (e) => {
       setLoading(false);
       setErrorMessage4('All fields are required.');
 }, 1000);
-
 setTimeout(() => {
   clearInterval(intervalId);
   setErrorMessage4('');
 }, 3000); // Stops after 5 seconds
-
-      
-  } else if(!validator.isMobilePhone(number, 'en-NG')){ 
+} else if(!validator.isMobilePhone(number, 'en-NG')){ 
     const intervalId = setInterval(() => {
       setLoading(false);
       setErrorMessage4('Invalid phone number.');
 }, 1000);
-
 setTimeout(() => {
   clearInterval(intervalId);
   setErrorMessage4('');
 }, 3000); // Stops after 5 seconds
-
-  } else if(!validator.isEmail(email)){
+} else if(!validator.isEmail(email)){
     const intervalId = setInterval(() => {
       setLoading(false);
       setErrorMessage4('Invalid email address.');
 }, 1000);
-
 setTimeout(() => {
   clearInterval(intervalId);
   setErrorMessage4('');
@@ -153,27 +146,20 @@ setTimeout(() => {
     setError(''); // Clear previous error
   } 
   } catch (error) {
-    // console.error('Submission Error:', error);
+    // console.error('Submission Error:' error);
     setError('Something went wrong. Please try again.');
     setSuccess(''); // Clear success message on error
   }
 
   setTimeout(() => {
       setShowModal(true);
-
       // Hide modal after 3 seconds
       setTimeout(() => {
         setShowModal(false);
       }, 3000);
     }, 1000);
- 
-    // window.location.reload();
+
 };
-
-
-
-
-
     return(
         <div className="container">
             <div  className='fixedWidth'>

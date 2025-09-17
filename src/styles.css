@@ -114,7 +114,6 @@ body{
     /* border: 1px solid #000; */
     width: 5%;
     height: auto;
-    /* gap: 30px; */
     margin-top: 65px;
 }
 
@@ -125,17 +124,15 @@ body{
 }
 
 .socials{
-    /* background-color: #fff; */
     color: #000;
     margin-left: 15px;
     gap: 40px;
-    /* margin-bottom: 50px; */
 }
 
 
 /* Home section */
 .profile{
-    width: 95%;
+    width: 100%;
     text-align: center;
 }
 
@@ -393,9 +390,17 @@ body{
 }
 
 .about{
-    background-color: var(--about-background-color);
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    gap: 60px;
+}
+
+.web{
+    /* background-color: var(--about-background-color); */
     color: #000;
     width: 800px;
+    font-size: 18px;
     border-radius: 15px;
     padding: 15px 10px;
     margin-left: 20px;
@@ -403,9 +408,7 @@ body{
     box-shadow: var(--about-shadow);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    
+    border: 1px solid rgba(255, 255, 255, 0.3);  
 }
 
 .about1{
@@ -415,19 +418,15 @@ body{
     padding: 10px 20px;
 }
 
-.web{
-    font-size: 18px;
-    /* font-weight: bold; */
-}
-
 .data{
     background-color: var(--about-background-color);
     color: #000;
-    width: 800px;
+    width: 865px;
     /* height: 115px; */
     font-size: 18px;
-    margin-left: 545px;
-    margin-top: 60px;
+    margin-left: 450px;
+    /* margin-left: 545px; */
+    /* margin-top: 60px; */
     padding: 15px 10px;
     padding-top: 10px;
     border-radius: 10px;
@@ -534,7 +533,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    /* gap: 10px; */
+    gap: 25px;
     padding: 10px;
 }
 
@@ -712,11 +711,11 @@ body{
     border-bottom-left-radius: 10px;
   }
 
-  /* @media(max-width: 1440px){
-    .formControl{
-        height: 350px;
+   @media(min-width: 1441px){
+    .data{
+        margin-left: 1660px;
     }
-  } */
+  }
 
   @media(max-width: 1024px){
     /* Home section */
@@ -747,7 +746,7 @@ body{
     }
     
     .data{
-        width: 566px;
+        width: 600px;
         margin-left: 390px;
     }
     
@@ -851,9 +850,6 @@ body{
     .data{
         width: 410px;
         margin-left: 320px;
-    }
-
-    .data1{
         font-size: 15px;
     }
 
@@ -880,19 +876,16 @@ body{
         gap: 40px;
     }
 
-    .about{
+    .web{
         width: 400px;
         padding: 15px 20px;
+        font-size: 13px;
     }
 
     .about1{
         font-size: 30px;
         font-weight: bold;
         margin-bottom: 10px;
-    }
-
-    .web{
-        font-size: 15px;
     }
 
     .skills{
@@ -1156,9 +1149,14 @@ body{
     }
 
     .about{
+        gap: 0px;
+    }
+
+    .web{
         width: 90%;
         margin: 10px auto;
-        margin-top: 20px;
+        margin-top: 10px;
+        padding: 10px;
     }
 
     .about1{
@@ -1166,22 +1164,16 @@ body{
         margin-bottom: 10px;
     }
 
-    .web{
-        font-size: 13px;
-    }
-
     .data{
         width: 90%;
-        margin: 20px auto;
-    }
-
-    .data1{
+        margin: 20px;
         font-size: 13px;
     }
 
     .skills{
         width: 90%;
         margin: 0 auto;
+        padding: 10px;
         /* height: 220px; */
     }
 
@@ -1264,11 +1256,8 @@ body{
     
     /* Contact selection */
     .container{
-        /* display: flex; */
         width: 100%;
-        /* gap: 45px; */
         font-size: 25px;
-        /* margin-top: 30px; */
     }
 
     .area{
@@ -1425,48 +1414,48 @@ body{
         align-items: center;
       }
 
-      .social3{
+    .social3{
         font-size: 20px;
-      }
+    }
 
-      .social{
+    .social{
         display: none;
-      }
+    }
 
-      .touch{
+    .touch{
         font-size: 20px;
         text-align: center;
-      }
+    }
 
-      .area{
+    .area{
         width: 100%;
-      }
+    }
 
-      .icon1{
+    .icon1{
         width: 234px;
         margin-bottom: 5px;
-      }
+    }
 
-      .device1{
+    .device1{
         height: 27px;
-        }
+    }
 
-      .icon2{
+    .icon2{
         width: 234px;
-      }
+    }
 
-      .phone1{
+    .phone1{
         width: 29px;
         height: 29px;
-      }
+    }
 
-      .contact{
+    .contact{
         font-size: 11px;
-      }
+    }
 
-      .mail{
+    .mail{
         font-size: 12px;
-      }
+    }
   }
 
 
